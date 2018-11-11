@@ -1,3 +1,5 @@
+'use strict'; 
+
 (() => {
     const HAND_FORMS = [
         0,
@@ -73,7 +75,7 @@
             const myHandType = parseInt(event.target.value, 10);
             const enemyHandType = parseInt(currentFrame % HAND_FORMS.length, 10);
 
-            isPuase = true;
+            isPause = true;
 
             judge(myHandType, enemyHandType);
         }
