@@ -1,16 +1,16 @@
 'use strict'; 
 
 (() => {
-    const HAND_FORMS = [
-        0,
+    const HAND_FORMS = [   // 手の形の指定
+        0, 
         1,
         2
     ];
 
-    const HAND_X = [
-        0,
-        380,
-        750
+    const HAND_X = [ // 画像の中の区切り位置
+        0, // ぐー
+        380, // ちょき
+        730　// ぱー
     ];
 
     const HAND_WIDTH = [
@@ -21,16 +21,18 @@
 
     const IMAGE_PATH = './images/sprite.png';
 
-    const FPS = 10;
+    const FPS = 10; // 1秒間に10回手の画像が切り替わる
 
-    let isPause = false;
+    let isPause = false; // ocClick関数が実行されるとtrueに変わり、loop関数内の条件を満たさなくなる
 
     let currentFrame = 0;
 
+    // アニメーション開始させる
+
     function main() {
-        const canvas = document.getElementById('screen');
-        const context = canvas.getContext('2d');
-        const imageObj = new Image();
+        const canvas = document.getElementById('screen'); // 描画場所を取得
+        const context = canvas.getContext('2d'); // 描画内容を指定
+        const imageObj = new Image(); // ？
         currentFrame = 0;
 
         imageObj.onload = function() {
